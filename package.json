@@ -1,0 +1,22 @@
+{
+  "name": "animebible",
+  "version": "1.0.0",
+  "description": "Discord bot to lookup anime and manga on anilist.co",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "keywords": [
+    "discord",
+    "anime",
+    "discordjs"
+  ],
+  "author": "Chr1sDev",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^7.4.3",
+    "dblapi.js": "^2.4.1",
+    "discord.js": "github:discordjs/discord.js",
+    "sanitize-html": "^2.5.1"
+  }
+}
