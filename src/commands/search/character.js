@@ -18,6 +18,8 @@ module.exports = {
     let name = args.join(" ");
     let url = `https://api.jikan.moe/v3/search/character?q=${name}&page=1`;
 
+    if (!name) return msg.reply("**Error:** Missing character name!");
+
     fetch(url)
       .then((res) => res.json())
       .then((api) => {
