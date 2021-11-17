@@ -10,7 +10,6 @@
 /*                                                          */
 /* =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
-const { token, prefix, tokens } = require("../config.json");
 const { Client, Intents } = require("discord.js");
 const DBL = require("dblapi.js");
 const chalk = require("chalk");
@@ -24,7 +23,7 @@ const client = new Client({
   ],
 });
 
-const dbl = new DBL(tokens.topgg, client);
+const dbl = new DBL(process.env.TOPGG_TOKEN, client);
 
 client.on("ready", () => {
   console.log(
