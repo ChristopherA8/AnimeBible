@@ -27,13 +27,12 @@ const client = new Client({
 const dbl = new DBL(tokens.topgg, client);
 
 client.on("ready", () => {
-  console.log("Logged in as " + client.user.tag);
-  client.user.setActivity(
-    `${chalk.bold.blue("[BOT]")} //help in ${client.guilds.cache.size} servers`,
-    {
-      type: "PLAYING",
-    }
+  console.log(
+    chalk.bold.blue("[BOT]") + " Logged in as " + chalk.green(client.user.tag)
   );
+  client.user.setActivity(`//help in ${client.guilds.cache.size} servers`, {
+    type: "PLAYING",
+  });
 
   //top.gg
   setInterval(() => {
@@ -65,7 +64,7 @@ client.on("interactionCreate", async (interaction) => {
 
 // Top.gg API events
 dbl.on("posted", () => {
-  console.log("Server count posted!");
+  console.log(chalk.bold.yellow("[DBL]") + " Server count posted!");
 });
 
 dbl.on("error", (e) => {
