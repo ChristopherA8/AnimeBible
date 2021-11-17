@@ -12,8 +12,8 @@
 
 const { token, prefix, tokens } = require("../config.json");
 const { Client, Intents } = require("discord.js");
-const sanitizeHtml = require("sanitize-html");
 const DBL = require("dblapi.js");
+const chalk = require("chalk");
 const fs = require("fs");
 
 const client = new Client({
@@ -28,9 +28,12 @@ const dbl = new DBL(tokens.topgg, client);
 
 client.on("ready", () => {
   console.log("Logged in as " + client.user.tag);
-  client.user.setActivity(`//help in ${client.guilds.cache.size} servers`, {
-    type: "PLAYING",
-  });
+  client.user.setActivity(
+    `${chalk.bold.blue("[BOT]")} //help in ${client.guilds.cache.size} servers`,
+    {
+      type: "PLAYING",
+    }
+  );
 
   //top.gg
   setInterval(() => {
@@ -47,15 +50,15 @@ client.on("ready", () => {
   }
 });
 
-client.on("messageCreate", (msg) => {
+client.on("messageCreate", async (msg) => {
   if (msg.author.bot) return;
   if (msg.channel.type === "dm") return;
 
   const { commandHandler } = require("./handlers/commands.js");
-  commandHandler(msg, prefix);
+  commandHandler(msg, process.env.PREFIX);
 });
 
-client.on("interactionCreate", (interaction) => {
+client.on("interactionCreate", async (interaction) => {
   const { interactionHandler } = require("./handlers/interactions.js");
   interactionHandler(interaction, client);
 });
@@ -69,4 +72,4 @@ dbl.on("error", (e) => {
   console.log(`Oops! ${e}`);
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
