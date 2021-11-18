@@ -29,10 +29,9 @@ module.exports = {
     }
 
     await rest
-      .put(
-        Routes.applicationGuildCommands(client.user.id, "700453406061494292"),
-        { body: applicationCommandData }
-      )
+      .put(Routes.applicationCommands(client.user.id), {
+        body: applicationCommandData,
+      })
       .catch(console.error);
 
     console.log(

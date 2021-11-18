@@ -8,14 +8,10 @@ module.exports = {
     const { Routes } = require("discord-api-types/v9");
     const rest = new REST({ version: "9" }).setToken(process.env.TOKEN);
     let applicationCommandData = [];
-    rest
-      .put(
-        Routes.applicationGuildCommands(
-          msg.client.user.id,
-          "700453406061494292"
-        ),
-        { body: applicationCommandData }
-      )
+    await rest
+      .put(Routes.applicationCommands(client.user.id), {
+        body: applicationCommandData,
+      })
       .then(() =>
         console.log(
           chalk.bold.blue("[BOT]") +
