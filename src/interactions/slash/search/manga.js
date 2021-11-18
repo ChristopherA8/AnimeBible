@@ -98,7 +98,7 @@ module.exports = {
             ephemeral: true,
           });
         } else {
-          interaction.reply({ embeds: [embed], ephemeral: true });
+          interaction.reply({ embeds: [embed] });
         }
       })
       .catch((error) => {
