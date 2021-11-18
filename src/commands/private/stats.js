@@ -1,7 +1,7 @@
 module.exports = {
   name: "stats",
   execute(msg) {
-    if (msg.author.id !== `279032930926592000`) return;
+    if (msg.author.id !== "279032930926592000") return;
 
     const SQLite = require("better-sqlite3");
     const sql = new SQLite("./src/databases/stats.sqlite");

@@ -1,7 +1,7 @@
 module.exports = {
   name: "list",
   execute(msg) {
-    if (msg.author.id !== `279032930926592000`) return;
+    if (msg.author.id !== "279032930926592000") return;
 
     const Discord = require("discord.js");
 
