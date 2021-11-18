@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "node .",
-    "start": "pm2 start src/bot.js --name 'AnimeBible'",
+    "start": "pm2 start src/index.js --name 'AnimeBible'",
     "restart": "pm2 restart AnimeBible",
     "stop": "pm2 stop AnimeBible",
     "del": "pm2 del AnimeBible",
