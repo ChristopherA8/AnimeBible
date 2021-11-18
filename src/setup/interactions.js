@@ -28,15 +28,16 @@ module.exports = {
       console.error(err);
     }
 
-    await rest
-      .put(Routes.applicationCommands(client.user.id), {
-        body: applicationCommandData,
-      })
-      .catch(console.error);
+    // Uncomment this if you add or modify a slash command
+    // await rest
+    //   .put(Routes.applicationCommands(client.user.id), {
+    //     body: applicationCommandData,
+    //   })
+    //   .catch(console.error);
 
-    console.log(
-      chalk.bold.blue("[BOT]") + " Successfully registered application commands"
-    );
+    // console.log(
+    //   chalk.bold.blue("[BOT]") + " Successfully registered application commands"
+    // );
 
     /////////////////////////////////////////////////////////////////////////////
 
