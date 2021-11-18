@@ -24,7 +24,7 @@ module.exports = {
       .then((res) => res.json())
       .then((results) => {
         let info = results;
-        if (name) info = results[0];
+        if (name) info = results[Math.floor(Math.random() * results.length)];
         let { quote, character, anime } = info;
 
         const embed = new Discord.MessageEmbed()

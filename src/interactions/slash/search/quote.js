@@ -36,7 +36,7 @@ module.exports = {
       .then(async (results) => {
         let info = results;
         if (name) {
-          info = results[0];
+          info = results[Math.floor(Math.random() * results.length)];
           if (!info) throw "No Data";
         }
 
