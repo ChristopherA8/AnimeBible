@@ -4,7 +4,12 @@
   "description": "Discord bot to lookup anime and manga on anilist.co",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ."
+    "dev": "node .",
+    "start": "pm2 start src/bot.js --name 'AnimeBible'",
+    "restart": "pm2 restart AnimeBible",
+    "stop": "pm2 stop AnimeBible",
+    "del": "pm2 del AnimeBible",
+    "log": "pm2 log AnimeBible"
   },
   "keywords": [
     "discord",
