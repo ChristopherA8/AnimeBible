@@ -13,6 +13,7 @@
 const { Client, Intents } = require("discord.js");
 const DBL = require("dblapi.js");
 const chalk = require("chalk");
+const Mongo = require("./mongo/Mongo");
 const fs = require("fs");
 
 const client = new Client({
@@ -32,6 +33,9 @@ client.on("ready", () => {
   client.user.setActivity(`//help in ${client.guilds.cache.size} servers`, {
     type: "PLAYING",
   });
+
+  // Initialize mongodb client
+  Mongo.init();
 
   //top.gg
   setInterval(() => {
