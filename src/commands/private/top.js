@@ -10,7 +10,7 @@ module.exports = {
     msg.client.guilds.cache
       .sort((guildA, guildB) => guildB.memberCount - guildA.memberCount)
       .forEach((guild) => {
-        if (count > 5) return;
+        if (count > 10) return;
         const embed = new Discord.MessageEmbed()
           .setColor("#55128E")
           .setThumbnail(guild.iconURL())
