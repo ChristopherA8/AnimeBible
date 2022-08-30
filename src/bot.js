@@ -6,7 +6,7 @@
 /*            Using the AniList.co GraphQL API              */
 /*                                                          */
 /*                     BOT WEBSITE:                         */
-/*                https://chr1s.dev/anime                   */
+/*         https://top.gg/bot/763464598959292458            */
 /*                                                          */
 /* =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
@@ -30,9 +30,23 @@ client.on("ready", () => {
   console.log(
     chalk.bold.blue("[BOT]") + " Logged in as " + chalk.green(client.user.tag)
   );
-  client.user.setActivity(`//help in ${client.guilds.cache.size} servers`, {
-    type: "PLAYING",
-  });
+
+  client.user.setActivity(
+    `Searching for anime in ${client.guilds.cache.size} servers`,
+    {
+      type: "PLAYING",
+    }
+  );
+
+  // Refresh status
+  setInterval(() => {
+    client.user.setActivity(
+      `Searching for anime in ${client.guilds.cache.size} servers`,
+      {
+        type: "PLAYING",
+      }
+    );
+  }, 1000 * 60 * 60);
 
   // Initialize mongodb client
   Mongo.init();
